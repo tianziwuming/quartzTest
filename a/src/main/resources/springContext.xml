@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+
+	<import resource="dataSource.xml"/>
+
+    <bean id="quartzScheduler"
+          class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="configLocation" value="classpath:quartz.properties"/>
+        <property name="dataSource">
+            <ref bean="quartzDataSource"/>
+        </property>
+        <property name="triggers">
+            <list>
+                <ref bean="testCronTrigger1"/>
+                <ref bean="testCronTrigger2"/>
+                <ref bean="testCronTrigger3"/>
+                <ref bean="testCronTrigger4"/>
+                <ref bean="testCronTrigger5"/>
+            </list>
+        </property>
+        <property name="applicationContextSchedulerContextKey" value="applicationContext"/>
+    </bean>
+
+        <!-- defined task class -->
+    <bean id="testJobDetail"
+          class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+        <property name="jobClass" value="test.TestJob"/>
+    </bean>
+
+    <bean id="testCronTrigger1" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="testJobDetail"/>
+        <property name="group" value="test"/>
+        <property name="name" value="test-trigger1"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="nameValue" value="job1"/>
+            </map>
+        </property>
+        <property name="cronExpression" value="0 7/1 * ? * *"/>
+    </bean>
+    
+     <bean id="testCronTrigger2" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="testJobDetail"/>
+        <property name="group" value="test"/>
+        <property name="name" value="test-trigger2"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="nameValue" value="job2"/>
+            </map>
+        </property>
+        <property name="cronExpression" value="0 7/1 * ? * *"/>
+    </bean>
+    
+     <bean id="testCronTrigger3" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="testJobDetail"/>
+        <property name="group" value="test"/>
+        <property name="name" value="test-trigger3"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="nameValue" value="job3"/>
+            </map>
+        </property>
+        <property name="cronExpression" value="0 7/1 * ? * *"/>
+    </bean>
+    
+     <bean id="testCronTrigger4" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="testJobDetail"/>
+        <property name="group" value="test"/>
+        <property name="name" value="test-trigger4"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="nameValue" value="job4"/>
+            </map>
+        </property>
+        <property name="cronExpression" value="0 7/1 * ? * *"/>
+    </bean>
+    
+     <bean id="testCronTrigger5" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="testJobDetail"/>
+        <property name="group" value="test"/>
+        <property name="name" value="test-trigger5"/>
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="nameValue" value="job5"/>
+            </map>
+        </property>
+        <property name="cronExpression" value="0 7/1 * ? * *"/>
+    </bean>
+</beans>
