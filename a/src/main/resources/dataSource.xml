@@ -8,7 +8,7 @@
 		destroy-method="close">
 		<property name="driverClassName" value="org.postgresql.Driver" />
 		<property name="url"
-			value="jdbc:postgresql://localhost:5432/quartz" />
+			value="jdbc:postgresql://localhost:5432/wangshbTest" />
 		<property name="username" value="postgres" />
 		<property name="password" value="jianxiasan" />
 		<property name="maxActive" value="50" />
