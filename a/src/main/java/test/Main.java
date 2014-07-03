@@ -9,6 +9,7 @@ public class Main {
 		long startTime = System.currentTimeMillis();
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("springContext.xml");
 		
+//		System.out.println("用时："+(System.currentTimeMillis()-startTime)+"毫秒");
 		System.out.println("用时："+(System.currentTimeMillis()-startTime)+"毫秒");
 	}
 
