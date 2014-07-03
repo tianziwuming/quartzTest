@@ -10,7 +10,7 @@ public class Main {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("springContext.xml");
 		
 //		System.out.println("用时："+(System.currentTimeMillis()-startTime)+"毫秒");
-		System.out.println("用时："+(System.currentTimeMillis()-startTime)+"毫秒");
+		System.out.println("use time："+(System.currentTimeMillis()-startTime)+"miliseconds");
 	}
 
 }
