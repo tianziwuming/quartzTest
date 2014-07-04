@@ -73,6 +73,11 @@
 		  <artifactId>amqp-client</artifactId>
 		  <version>3.3.4</version>
 		</dependency>
+        <dependency>
+        	<groupId>junit</groupId>
+        	<artifactId>junit</artifactId>
+        	<version>4.11</version>
+        </dependency>
   </dependencies>
   <scm>
   	<url>https://github.com/tianziwuming/quartzTest</url>
