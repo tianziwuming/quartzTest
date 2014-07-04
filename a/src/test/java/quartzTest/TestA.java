@@ -6,6 +6,6 @@ public class TestA {
 	
 	@Test
 	public void testA(){
-		System.out.println("this is 1.2");
+		System.out.println("this is 1.3");
 	}
 }
